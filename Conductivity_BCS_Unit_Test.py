@@ -13,7 +13,7 @@ import sys
 
 sys.path.insert(1, '../Helper')
 
-from Fundamental_BCS_Equations import conductivity_BCS
+from Conductivity_BCS import conductivity_BCS
 from plotxy import plotcomplex,pltsettings,newfig,lbl
 
 directory = 'Conductivity_BCS_Unit_Test/' 
