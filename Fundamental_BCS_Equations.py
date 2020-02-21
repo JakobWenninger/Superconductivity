@@ -36,7 +36,7 @@ def nS_over_nN0(x =np.arange(-.001,.001,0.00001)*const.e,te=4,teC=9.2):
     dCP = cooperPair_Binding_Energy_over_T(te/teC,cooperPair_Binding_Energy_0K(teC))[0]
     ret = np.zeros_like(x)
     cond=(x>dCP) | (x<-dCP) # the condition of values not zero
-    ret[cond] = np.abs(x[cond])/np.sqrt(np.subtract(np.multiply(x[cond],x[cond]),dCP*dCP))
+    ret[cond] = np.divide(np.abs(x[cond]),np.sqrt(np.subtract(np.square(x[cond]),np.square(dCP))))
     return ret
 
 def _nS_over_nN0_Test(energyRange=np.arange(-.01*const.e,.01*const.e,.0001*const.e),te=4,teC=10):
